@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Chahd JOUHARI</title>
+    <link rel="stylesheet" href="logo-removebg-preview.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700;900&family=Arima+Madurai:wght@400;700;900&family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="language-styles.css">
+
+<style>
+    :root {
+    --translations: '{"en":{"nav":{"home":"About Me","services":"Works","about":"Experiences","contact":"Contact"},"hero":{"greeting":"Hi there","title":"I\'m chahd","role1":"Graphic Designer","role2":"Full-Stack Web Developer","role3":"UI Designer","available":"Available for work"},"services":{"title":"How Can I Assist You?"},"experience":{"title":"Experiences","company1":"Private School","date1":"Sept 2023 - May 2025","role1":"Graphic Designer","badge1":"Design","detail1_1":"Designed Educational Posters Using Illustrator And Photoshop","detail1_2":"Adapted Visuals To Different Academic Levels And Subjects","detail1_3":"Collaborated With The Teaching Staff To Ensure Visual Consistency","date2":"Continuing...","role2":"Computer Science Teacher","badge2":"Education","detail2_1":"Taught Computer Basics To Primary And Middle School Students","detail2_2":"Created Educational Materials And Led Hands-On Activities To Build Digital Skills","company3":"GRAPHIENET","date3":"May 2023 - June 2023","role3":"Graphic Designer","badge3":"Design","detail3_1":"Designed Eye-Catching Advertising Banners For Digital And Print Media","detail3_2":"Collaborated On Creative Projects To Deliver Visually Appealing Graphics Aligned With Client Branding","company4":"VALABLEU","date4":"May 2020 - June 2021","role4":"Full-Stack Web Developer","badge4":"Development","detail4_1":"Developed And Managed Website Databases, Ensuring Smooth Functionality And Optimized Performance","detail4_2":"Contributed To Building Responsive Web Pages And Implemented Interactive Features To Enhance User Experience"}},"fr":{"nav":{"home":"À propos de moi","services":"Travaux","about":"Expériences","contact":"Contact"},"hero":{"greeting":"Salut","title":"Je suis Chahd","role1":"Graphiste","role2":"Développeur Web Full-Stack","role3":"Designer UI","available":"Disponible pour du travail"},"services":{"title":"Comment puis-je vous aider ?"},"experience":{"title":"Expériences","company1":"École Privée","date1":"Sept 2023 - Mai 2025","role1":"Graphiste","badge1":"Design","detail1_1":"Conception d\'affiches éducatives avec Illustrator et Photoshop","detail1_2":"Adaptation des visuels aux différents niveaux académiques et matières","detail1_3":"Collaboration avec le corps enseignant pour assurer la cohérence visuelle","date2":"En cours...","role2":"Professeur d\'Informatique","badge2":"Éducation","detail2_1":"Enseignement des bases de l\'informatique aux élèves du primaire et du collège","detail2_2":"Création de matériel pédagogique et animation d\'activités pratiques pour développer les compétences numériques","company3":"GRAPHIENET","date3":"Mai 2023 - Juin 2023","role3":"Graphiste","badge3":"Design","detail3_1":"Conception de bannières publicitaires attractives pour les médias numériques et imprimés","detail3_2":"Collaboration sur des projets créatifs pour fournir des graphiques visuellement attrayants alignés sur l\'identité des clients","company4":"VALABLEU","date4":"Mai 2020 - Juin 2021","role4":"Développeur Web Full-Stack","badge4":"Développement","detail4_1":"Développement et gestion des bases de données de sites web, assurant un fonctionnement fluide et des performances optimisées","detail4_2":"Participation à la création de pages web responsives et mise en œuvre de fonctionnalités interactives pour améliorer l\'expérience utilisateur"}}}';
+}
+ /* Language switcher wrapper */
+        .language-switcher-wrapper {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .language-switcher {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 2px solid rgba(123, 57, 69, 0.3);
+            color: var(--primary-dark);
+            padding: 8px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-switcher::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(123, 57, 69, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.8s ease;
+            opacity: 0;
+        }
+
+        .language-switcher:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            border-color: var(--accent-gold);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(123, 57, 69, 0.4);
+        }
+
+        .language-switcher:hover::before {
+            opacity: 0.7;
+            animation: shimmer 1.5s ease-in-out;
+        }
+
+        .language-switcher i.fa-globe {
+            color: var(--accent-gold);
+            transition: all 0.3s ease;
+            animation: rotate-float 4s linear infinite;
+        }
+
+        .language-switcher i.fa-chevron-down {
+            transition: all 0.3s ease;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 120%;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            min-width: 140px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .language-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            background: none;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: left;
+        }
+
+        .lang-option:hover, .lang-option.active {
+            background: linear-gradient(135deg, var(--accent-gold), var(--secondary-accent));
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .lang-option.active {
+            background: var(--accent-gold);
+        }
+
+        /* Animations */
+        @keyframes shimmer {
+            0%, 100% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes rotate-float {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .language-switcher-wrapper {
+                margin-left: 15px;
+            }
+        }
+
+</style>
+    
+   
+</head>
+<body>
+    
+    <!-- Decorative Elements -->
+    <div class="grain-overlay"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text"><img class="mylogo" src="logo-removebg-preview.png" alt=""></span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active" data-translate="nav.home">About Me</a></li>
+                <li><a href="#services" class="nav-link" data-translate="nav.services">Works</a></li>
+                <li><a href="#experience" class="nav-link" data-translate="nav.about">Experiences</a></li>
+            </ul>
+            
+            <a href="#contact" class="contact-btn">
+                <span data-translate="nav.contact">Contact me</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+    
+            <!-- LANGUAGE SWITCHER -->
+            <div class="language-switcher-wrapper">
+                <button class="language-switcher" id="langBtn" title="Change Language">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                
+                <div class="language-dropdown" id="langDropdown">
+                    <button class="lang-option active" data-lang="en">
+                        🇺🇸 English
+                    </button>
+                    <button class="lang-option" data-lang="fr">
+                        🇫🇷 Français
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-right">
+                <div class="status-badge">
+                    <span class="pulse-dot"></span>
+                    <span class="status-text" data-translate="hero.available">Available for work</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="title-line" data-translate="hero.greeting">Hi there</span>
+                    <span class="title-line name-line" data-translate="hero.title">I'm Chahd</span>
+                </h1>
+                
+                <div class="hero-roles">
+                    <p class="role" data-aos="fade-up" data-aos-delay="100">
+                        <span class="role-icon">✦</span>
+                        <span data-translate="hero.role1">Graphic Designer</span>
+                    </p>
+                    <p class="role" data-aos="fade-up" data-aos-delay="200">
+                        <span class="role-icon">✦</span>
+                        <span data-translate="hero.role2">Full-Stack Web Developer</span>
+                    </p>
+                    <p class="role" data-aos="fade-up" data-aos-delay="300">
+                        <span class="role-icon">✦</span>
+                        <span data-translate="hero.role3">UI Designer</span>
+                    </p>
+                </div>
+                <button class="download-btn" data-aos="fade-up" data-aos-delay="400" onclick="window.open('chahd_jouhari_cv.pdf', '_blank')">
+                    <span class="btn-content">
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </span>
+                    <span class="btn-shine"></span>
+                </button>
+            </div>
+            
+            <div class="hero-image" data-aos="fade-left">
+                <div class="image-wrapper">
+                    <div class="blob-bg"></div>
+                    <div class="profile-frame">
+                        <img src="my picture.png" alt="Chahd" class="profile-img" onerror="this.src='mypicture.png'">
+                    </div>
+                    <div class="floating-quote">
+                        <p data-translate="hero.quote">I design beautifully simple things, And I love what I do.</p>
+                        <div class="quote-accent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title" data-translate="services.title">How Can I Assist You?</h2>
+                <div class="title-decoration">
+                    <span class="decoration-line"></span>
+                    <span class="decoration-dot"></span>
+                    <span class="decoration-line"></span>
+                </div>
+            </div>
+            
+            <div class="services-grid">
+                <!-- UI Design Card -->
+                <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-glow"></div>
+                    <div class="service-icon-wrapper">
+                        <div class="icon-bg"></div>
+                        <i class="fas fa-pen-nib service-icon"></i>
+                    </div>
+                    <h3 class="service-title">UI Design</h3>
+                    <p class="service-description" data-translate="services.ui_desc">
+                        Creating clean, user-friendly, and visually engaging websites. From wireframes to polished designs, I focus on usability, aesthetics, and seamless navigation, always exploring new trends to make websites both beautiful and functional.
+                    </p>
+                    <div class="service-footer">
+                        <span class="service-link" data-translate="services.explore">Explore Work <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                
+                <!-- Graphic Design Card -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-glow"></div>
+                    <div class="service-icon-wrapper">
+                        <div class="icon-bg"></div>
+                        <i class="fas fa-palette service-icon"></i>
+                    </div>
+                    <h3 class="service-title">Graphic Design</h3>
+                    <p class="service-description" data-translate="services.graphics_desc">
+                        Passionate about creating visually striking designs. From branding to social media visuals, I focus on creativity and clear communication, striving to deliver designs that are both impactful and memorable.
+                    </p>
+                    <div class="service-footer">
+                        <span class="service-link" data-translate="services.explore">Explore Work <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                
+                <!-- Development Card -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-glow"></div>
+                    <div class="service-icon-wrapper">
+                        <div class="icon-bg"></div>
+                        <i class="fas fa-code service-icon"></i>
+                    </div>
+                    <h3 class="service-title">Development</h3>
+                    <p class="service-description" data-translate="services.dev_desc">
+                        I'm a Full-Stack Developer passionate about creating powerful web experiences. From branding to social media visuals, I focus on creativity and clear communication, striving to deliver designs that are both impactful and memorable.
+                    </p>
+                    <div class="service-footer">
+                        <span class="service-link" data-translate="services.explore">Explore Work <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title" data-translate="experience.title">Experiences</h2>
+                <div class="title-decoration">
+                    <span class="decoration-line"></span>
+                    <span class="decoration-dot"></span>
+                    <span class="decoration-line"></span>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-date-wrapper">
+                        <div class="company-badge">
+                            <h3 class="company-name" data-translate="experience.company1">Private School</h3>
+                            <span class="date-range" data-translate="experience.date1">Sept 2023 - May 2025</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-connector">
+                        <div class="timeline-dot active-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    
+                    <div class="timeline-content">
+                        <div class="content-card">
+                            <div class="role-header">
+                                <h4 class="role-title" data-translate="experience.role1">Graphic Designer</h4>
+                                <span class="role-badge" data-translate="experience.badge1">Design</span>
+                            </div>
+                            <ul class="role-details">
+                                <li><i class="fas fa-check-circle"></i> <span data-translate="experience.detail1_1">Designed Educational Posters Using Illustrator And Photoshop</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-translate="experience.detail1_2">Adapted Visuals To Different Academic Levels And Subjects</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-translate="experience.detail1_3">Collaborated With The Teaching Staff To Ensure Visual Consistency</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-date-wrapper">
+                        <div class="company-badge">
+                            <span class="date-range continuing" data-translate="experience.date2">Continuing...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-connector">
+                        <div class="timeline-dot active-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    
+                    <div class="timeline-content">
+                        <div class="content-card">
+                            <div class="role-header">
+                                <h4 class="role-title" data-translate="experience.role2">Computer Science Teacher</h4>
+                                <span class="role-badge" data-translate="experience.badge2">Education</span>
+                            </div>
+                            <ul class="role-details">
+                                <li><i class="fas fa-check-circle"></i> <span data-translate="experience.detail2_1">Taught Computer Basics To Primary And Middle School Students</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-translate="experience.detail2_2">Created Educational Materials And Led Hands-On Activities To Build Digital Skills</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-date-wrapper">
+                        <div class="company-badge">
+                            <h3 class="company-name" data-translate="experience.company3">GRAPHIENET</h3>
+                            <span class="date-range" data-translate="experience.date3">May 2023 - June 2023</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-connector">
+                        <div class="timeline-dot highlight-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    
+                    <div class="timeline-content">
+                        <div class="content-card">
+                            <div class="role-header">
+                                <h4 class="role-title" data-translate="experience.role3">Graphic Designer</h4>
+                                <span class="role-badge" data-translate="experience.badge3">Design</span>
+                            </div>
+                            <ul class="role-details">
+                                <li><i class="fas fa-check-circle"></i> <span data-translate="experience.detail3_1">Designed Eye-Catching Advertising Banners For Digital And Print Media</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-translate="experience.detail3_2">Collaborated On Creative Projects To Deliver Visually Appealing Graphics Aligned With Client Branding</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-date-wrapper">
+                        <div class="company-badge">
+                            <h3 class="company-name" data-translate="experience.company4">VALABLEU</h3>
+                            <span class="date-range" data-translate="experience.date4">May 2020 - June 2021</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-connector">
+                        <div class="timeline-dot active-dot"></div>
+                    </div>
+                    
+                    <div class="timeline-content">
+                        <div class="content-card">
+                            <div class="role-header">
+                                <h4 class="role-title" data-translate="experience.role4">Full-Stack Web Developer</h4>
+                                <span class="role-badge" data-translate="experience.badge4">Development</span>
+                            </div>
+                            <ul class="role-details">
+                                <li><i class="fas fa-check-circle"></i> <span data-translate="experience.detail4_1">Developed And Managed Website Databases, Ensuring Smooth Functionality And Optimized Performance</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-translate="experience.detail4_2">Contributed To Building Responsive Web Pages And Implemented Interactive Features To Enhance User Experience</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info" data-aos="fade-right">
+                    <h2 class="contact-heading" data-translate="contact.title">Get In Touch</h2>
+                    <p class="contact-subtitle" data-translate="contact.subtitle">I'd Like To Hear From You!</p>
+                    <p class="contact-text" data-translate="contact.text">If You Have Any Inquiries Or Just Want To Say Hi, Please Use The Contact Form!</p>
+                    
+                    <div class="contact-methods">
+                        <a href="mailto:chahdjourhari7@gmail.com" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <span class="method-label" data-translate="contact.email_label">Email</span>
+                                <span class="method-value">chahdjourhari7@gmail.com</span>
+                            </div>
+                        </a>
+                        
+                        <a href="tel:+212722235302" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-details">
+                                <span class="method-label" data-translate="contact.phone_label">Phone</span>
+                                <span class="method-value">+212 722 235 302</span>
+                            </div>
+                        </a>
+                    </div>
+                
+                </div>
+                
+                <!-- Contact Form -->
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvbarka" method="POST" data-aos="fade-left">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name" class="form-label" data-translate="contact.name">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" data-translate-placeholder="contact.name" required>
+                            <span class="input-border"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label" data-translate="contact.email">E-Mail</label>
+                            <input type="email" id="email" name="_replyto" class="form-input" placeholder="Your E-Mail" data-translate-placeholder="contact.email" required>
+                            <span class="input-border"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label" data-translate="contact.phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="Your Phone" data-translate-placeholder="contact.phone">
+                            <span class="input-border"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company" class="form-label" data-translate="contact.company">Company</label>
+                            <input type="text" id="company" name="company" class="form-input" placeholder="Your Company" data-translate-placeholder="contact.company">
+                            <span class="input-border"></span>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message" class="form-label" data-translate="contact.message">Message</label>
+                            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Your Message" rows="5" data-translate-placeholder="contact.message" required></textarea>
+                            <span class="input-border"></span>
+                        </div>
+                        
+                        <!-- Formspree required hidden fields -->
+                        <input type="hidden" name="_subject" value="New contact from your portfolio!">
+                        <input type="text" name="_gotcha" style="display:none" />
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-content">
+                            <span data-translate="contact.send">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </span>
+                        <span class="btn-shine"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">   
+                    <div class="logo">
+                        <span class="logo-text"><img class="mylogo" src="logo-removebg-preview.png" alt=""></span>
+                    </div>
+                   
+                    <p class="footer-tagline">Crafting beautiful digital experiences</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home" data-translate="nav.home">Home</a>
+                    <a href="#services" data-translate="nav.services">Works</a>
+                    <a href="#experience" data-translate="nav.about">Experiences</a>
+                    <a href="#contact" data-translate="nav.contact">Contact me!</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">&copy; 2026 Chahd. All rights reserved.</p>
+                <p data-translate="footer.design">Designed & Developed with <i class="fas fa-heart"></i> by Chahd</p>
+            </div>
+            <div id="toast" class="toast">
+                <span id="toast-message"></span>
+                <span class="close-toast">&times;</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LANGUAGE MANAGEMENT SCRIPT (with select support) -->
+   <!-- LANGUAGE SWITCHER JAVASCRIPT -->
+<script>
+    // Language translations (embedded as JS object)
+    const translations = {
+        "en": {
+            nav: {
+                home: "About Me",
+                services: "Works", 
+                about: "Experiences",
+                contact: "Contact me!"
+            },
+            hero: {
+                greeting: "Hi there!",
+                title: "I'm chahd",
+                role1: "Graphic Designer",
+                role2: "Full-Stack Web Developer", 
+                role3: "UI Designer",
+                available: "Available for work",
+                quote: "I design beautifully simple things, And I love what I do."
+            },
+            services: {
+                title: "How Can I Assist You?",
+                explore: "Explore Work",
+                ui_desc: "Creating clean, user-friendly, and visually engaging websites. From wireframes to polished designs, I focus on usability, aesthetics, and seamless navigation, always exploring new trends to make websites both beautiful and functional.",
+                graphics_desc: "Passionate about creating visually striking designs. From branding to social media visuals, I focus on creativity and clear communication, striving to deliver designs that are both impactful and memorable.",
+                dev_desc: "I'm a Full-Stack Developer passionate about creating powerful web experiences. From branding to social media visuals, I focus on creativity and clear communication, striving to deliver designs that are both impactful and memorable."
+            },
+            experience: {
+                title: "Experiences",
+                company1: "Private School",
+                date1: "Sept 2023 - May 2025",
+                role1: "Graphic Designer",
+                badge1: "Design",
+                detail1_1: "Designed Educational Posters Using Illustrator And Photoshop",
+                detail1_2: "Adapted Visuals To Different Academic Levels And Subjects",
+                detail1_3: "Collaborated With The Teaching Staff To Ensure Visual Consistency",
+                date2: "Continuing...",
+                role2: "Computer Science Teacher",
+                badge2: "Education",
+                detail2_1: "Taught Computer Basics To Primary And Middle School Students",
+                detail2_2: "Created Educational Materials And Led Hands-On Activities To Build Digital Skills",
+                company3: "GRAPHIENET",
+                date3: "May 2023 - June 2023",
+                role3: "Graphic Designer",
+                badge3: "Design",
+                detail3_1: "Designed Eye-Catching Advertising Banners For Digital And Print Media",
+                detail3_2: "Collaborated On Creative Projects To Deliver Visually Appealing Graphics Aligned With Client Branding",
+                company4: "VALABLEU",
+                date4: "May 2020 - June 2021",
+                role4: "Full-Stack Web Developer",
+                badge4: "Development",
+                detail4_1: "Developed And Managed Website Databases, Ensuring Smooth Functionality And Optimized Performance",
+                detail4_2: "Contributed To Building Responsive Web Pages And Implemented Interactive Features To Enhance User Experience"
+            },
+            contact: {
+                title: "Get In Touch!",
+                subtitle: "I'd Like To Hear From You!",
+                text: "If You Have Any Inquiries Or Just Want To Say Hi, Please Use The Contact Form!",
+                email_label: "Email",
+                phone_label: "Phone",
+                name: "Name",
+                email: "E-Mail", 
+                phone: "Phone",
+                company: "Company",
+                message: "Message",
+                send: "Send Message"
+            },
+            footer: {
+                copyright: "© 2026 Chahd. All rights reserved.",
+                design: "Designed & Developed with ❤️ by Chahd"
+            }
+        },
+        "fr": {
+            nav: {
+                home: "À propos de moi",
+                services: "Travaux",
+                about: "Expériences", 
+                contact: "Contactez-moi!"
+            },
+            hero: {
+                greeting: "Salut!",
+                title: "C'est Chahd",
+                role1: "Graphiste",
+                role2: "Développeuse Web Full-Stack",
+                role3: "Designer UI",
+                available: "Disponible pour du travail",
+                quote: "Je conçois des choses magnifiquement simples, Et j'adore ce que je fais."
+            },
+            services: {
+                title: "Comment puis-je vous aider ?",
+                explore: "Explorer le travail",
+                ui_desc: "Création de sites web propres, conviviaux et visuellement attrayants. Des wireframes aux designs finalisés, je me concentre sur l'utilisabilité, l'esthétique et une navigation fluide, explorant toujours de nouvelles tendances pour rendre les sites web à la fois beaux et fonctionnels.",
+                graphics_desc: "Passionné par la création de designs visuellement percutants. Du branding aux visuels de médias sociaux, je me concentre sur la créativité et une communication claire, m'efforçant de livrer des designs à la fois impactants et mémorables.",
+                dev_desc: "Je suis un Développeur Full-Stack passionné par la création d'expériences web puissantes. De l'image de marque aux visuels de médias sociaux, je me concentre sur la créativité et une communication claire, m'efforçant de livrer des designs à la fois impactants et mémorables."
+            },
+            experience: {
+                title: "Expériences",
+                company1: "École Privée",
+                date1: "Sept 2023 - Mai 2025",
+                role1: "Graphiste",
+                badge1: "Design",
+                detail1_1: "Conception d'affiches éducatives avec Illustrator et Photoshop",
+                detail1_2: "Adaptation des visuels aux différents niveaux académiques et matières",
+                detail1_3: "Collaboration avec le corps enseignant pour assurer la cohérence visuelle",
+                date2: "Suivre",
+                role2: "Professeur d'Informatique",
+                badge2: "Éducation",
+                detail2_1: "Enseignement des bases de l'informatique aux élèves du primaire et du collège",
+                detail2_2: "Création de matériel pédagogique et animation d'activités pratiques pour développer les compétences numériques",
+                company3: "GRAPHIENET",
+                date3: "Mai 2023 - Juin 2023",
+                role3: "Graphiste",
+                badge3: "Design",
+                detail3_1: "Conception de bannières publicitaires attractives pour les médias numériques et imprimés",
+                detail3_2: "Collaboration sur des projets créatifs pour fournir des graphiques visuellement attrayants alignés sur l'identité des clients",
+                company4: "VALABLEU",
+                date4: "Mai 2020 - Juin 2021",
+                role4: "Développeur Web Full-Stack",
+                badge4: "Développement",
+                detail4_1: "Développement et gestion des bases de données de sites web, assurant un fonctionnement fluide et des performances optimisées",
+                detail4_2: "Participation à la création de pages web responsives et mise en œuvre de fonctionnalités interactives pour améliorer l'expérience utilisateur"
+            },
+            contact: {
+                title: "Rester en Contact!",
+                subtitle: "J'aimerais avoir de vos nouvelles !",
+                text: "Si vous avez des questions ou voulez juste dire bonjour, utilisez le formulaire de contact !",
+                email_label: "Email",
+                phone_label: "Téléphone", 
+                name: "Nom",
+                email: "E-mail",
+                phone: "Téléphone",
+                company: "Entreprise",
+                message: "Message",
+                send: "Envoyer le Message"
+            },
+            footer: {
+                copyright: "© 2026 Chahd. Tous droits réservés.",
+                design: "Conçu et développé avec ❤️ par Chahd"
+            }
+        }
+    };
+
+    // Current language (defaults to English, can be saved in localStorage)
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    // Function to translate text
+    function translateText(key, fallback = '') {
+        const keys = key.split('.');
+        let value = translations[currentLang] || translations['en'];
+        
+        for (const k of keys) {
+            if (!value || typeof value !== 'object') return fallback || key;
+            value = value[k];
+        }
+        
+        return value || fallback || key;
+    }
+
+    // Function to apply translations to all tagged elements
+    function applyTranslations() {
+        // Update elements with data-translate attribute
+        document.querySelectorAll('[data-translate]').forEach(element => {
+            const key = element.getAttribute('data-translate');
+            const text = translateText(key);
+            
+            if (text && text !== key) {
+                element.textContent = text;
+            }
+        });
+        
+        // Update form placeholders
+        document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+            const key = element.getAttribute('data-translate-placeholder');
+            const text = translateText(key);
+            if (text && text !== key) {
+                element.placeholder = text;
+            }
+        });
+        
+        // Update page title
+        const titleKey = 'hero.title';
+        document.title = `Portfolio - ${translateText(titleKey)}`;
+        
+        // Update language dropdown active state
+        document.querySelectorAll('.lang-option').forEach(option => {
+            option.classList.toggle('active', option.getAttribute('data-lang') === currentLang);
+        });
+        
+        // Update current language indicator
+        const currentLangEl = document.getElementById('currentLang');
+        if (currentLangEl) {
+            currentLangEl.textContent = currentLang.toUpperCase();
+        }
+        
+        // Update HTML lang attribute
+        document.documentElement.setAttribute('lang', currentLang);
+        
+        // Save to localStorage
+        localStorage.setItem('lang', currentLang);
+    }
+
+    // Function to switch language
+    function setLanguage(lang) {
+        if (lang in translations) {
+            currentLang = lang;
+            applyTranslations();
+            
+            // Re-initialize AOS for any layout shifts
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        }
+    }
+
+    // Initialize language switcher
+    document.addEventListener('DOMContentLoaded', function() {
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        const langOptions = document.querySelectorAll('.lang-option');
+        
+        // Toggle dropdown
+        langBtn?.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('open');
+            langDropdown?.classList.toggle('open');
+        });
+        
+        // Click outside to close
+        document.addEventListener('click', function(e) {
+            if (!langBtn?.contains(e.target) && !langDropdown?.contains(e.target)) {
+                langBtn?.classList.remove('open');
+                langDropdown?.classList.remove('open');
+            }
+        });
+        
+        // Language option clicks
+        langOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                setLanguage(lang);
+                
+                // Update button state
+                langBtn?.classList.remove('open');
+                langDropdown?.classList.remove('open');
+            });
+        });
+        
+        // Apply initial translations
+        setLanguage(currentLang);
+        
+        // Initialize AOS
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 100
+            });
+        }
+    });
+</script>
+</body>
+</html>
