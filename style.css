@@ -169,10 +169,62 @@ body {
 .logo:hover {
     transform: scale(1.05);
 }
-.mylogo{
-   width: 130%;
-   height: 80px;
-   margin: -30px -20px -40px -0px;
+/* Perfect size for your portfolio */
+/* CURRENT LOGO SIZE - FIXED */
+.mylogo {
+    width: 180px;           /* Perfect for desktop */
+    height: 60px;           /* Good height */
+    object-fit: contain;
+    margin: -25px -15px -30px 0;
+}
+
+/* RESPONSIVE VERSION */
+@media (max-width: 1024px) {
+    .mylogo {
+        width: 150px;
+        height: 50px;
+        margin: -20px -10px -25px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .mylogo {
+        width: 130px;
+        height: 45px;
+        margin: -15px -8px -20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .mylogo {
+        width: 110px;
+        height: 40px;
+        margin: -10px -5px -15px 0;
+    }
+}
+.footer .mylogo {
+    width: 140px;   /* Slightly smaller than header */
+    height: 45px;
+    opacity: 0.9;
+}
+/* Golden ratio logo sizing */
+.mylogo {
+    /* Width based on viewport */
+    width: clamp(110px, 12vw, 180px);
+    
+    /* Height based on width (3:1 ratio) */
+    height: calc(var(--logo-width) / 3);
+    
+    /* Or if your logo is 2:1 */
+    height: calc(var(--logo-width) / 2);
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .mylogo {
+        width: 110px;
+        height: 35px;
+    }
 }
 
 .logo-circle {
