@@ -165,6 +165,10 @@ body {
     cursor: pointer;
     transition: var(--transition-smooth);
 }
+/* Logo centré en haut de page */
+.navbar.scrolled .nav-container {
+    justify-content: center;
+}
 
 .logo:hover {
     transform: scale(1.05);
@@ -1402,6 +1406,7 @@ ease-in-out infinite;
 
 .footer-brand .logo {
     margin-bottom: 1rem;
+    
 }
 
 .footer-brand .logo-circle {
